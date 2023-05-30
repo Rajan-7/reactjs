@@ -19,6 +19,7 @@ const Todoform = () => {
           <div className="li">
             <h6 className="crossText">Motivation to code</h6>
             <div className="action">
+              <button className="edit">Edit</button>
               <button className="completed">completed</button>
               <button className="delete">Delete</button>
             </div>

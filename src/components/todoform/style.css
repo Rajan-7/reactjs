@@ -100,19 +100,23 @@ h6{
     background-color:red ;
     color: white;
     border-radius: 30px;
-    margin-left: 11px;
+    margin-left: 3px;
 }
 .completed{
-    background-color: rgb(13, 219, 106);
+    background-color: rgb(16, 177, 88);
     color: white;
     cursor: pointer;
     padding: 4px 20px 4px 20px;
     border-radius: 30px;
     border: none;
+    margin-left: 3px;
 }  
-/* .delete:hover{
-    font-size: 16px;
-}
-.completed:hover{
-    font-size: 16px;
-} */
+.edit{
+    background-color: rgb(4, 97, 46);
+    color: white;
+    cursor: pointer;
+    padding: 4px 20px 4px 20px;
+    border-radius: 30px;
+    border: none;
+} 
+
