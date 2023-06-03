@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
 
-
 const Todoform = () => {
   const [inputTask, setInputTask] = useState("");
   const [itemsList, setItemsList] = useState([]);
@@ -49,6 +48,18 @@ const Todoform = () => {
     setEditedTaskList(index);
   };
 
+  // making complete button toggle
+  const taskCompleted = (id) => {
+    const element = itemsList.findIndex((curElem) => curElem.id === id);
+    const newItemsList = [...itemsList];
+    newItemsList[element] = {
+      ...newItemsList[element],
+      isCompleted: !newItemsList[element].isCompleted,
+    };
+    setItemsList(newItemsList);
+  };
+
+
   return (
     <div className="todo-container width-100">
       <div className="todo-container width-50">
@@ -70,7 +81,13 @@ const Todoform = () => {
           {itemsList.map((curElem, index) => {
             return (
               <div className="li">
-                <h6 className="crossText">{curElem.name}</h6>
+                <h6
+                  className={
+                    curElem.isCompleted ? "completed" : "not-completed"
+                  }
+                >
+                  {curElem.name}
+                </h6>
                 <div className="action">
                   <button
                     className="edit"
@@ -80,7 +97,12 @@ const Todoform = () => {
                   >
                     Edit
                   </button>
-                  <button className="completed">completed</button>
+                  <button
+                    onClick={() => taskCompleted(curElem.id)}
+                    className="completed-1"
+                  >
+                    completed
+                  </button>
                   <button
                     className="delete"
                     onClick={() => deleteItems(curElem.id)}
