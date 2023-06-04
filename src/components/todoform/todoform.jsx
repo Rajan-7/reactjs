@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
+
+const getLocalData=()=>{
+  const list=localStorage.getItem("myTodo");
+  if(list){
+    return JSON.parse(list);
+  }
+  else{
+    return [];
+  }
+}
 
 const Todoform = () => {
   const [inputTask, setInputTask] = useState("");
-  const [itemsList, setItemsList] = useState([]);
+  const [itemsList, setItemsList] = useState(getLocalData());
   const [editedTaskList, setEditedTaskList] = useState("");
 
   // adding task/items functions
@@ -58,6 +68,10 @@ const Todoform = () => {
     };
     setItemsList(newItemsList);
   };
+  // for local storage
+  useEffect(()=>{
+    localStorage.setItem("myTodo",JSON.stringify(itemsList));
+  },[itemsList]);
 
 
   return (
