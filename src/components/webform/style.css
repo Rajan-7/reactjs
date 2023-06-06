@@ -1,20 +1,38 @@
-body{
-    background-color: rgb(1, 19, 19);
+body {
+  background-color: #faf7f2;
 }
-.container{
-    margin:20px 25px 0px 25px;
+.nav-btn {
+  padding-top: 50px;
+  text-align: center;
+  padding-bottom: 20px;
+  text-transform: capitalize;
 }
-.subcontainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.nav-btn-group {
+  border-radius: 1rem;
+  text-transform: capitalize;
 }
-.frame{
-    width:100px;
-    border-radius: 50px;
-    text-align: center;
-    margin-right: 30px;
-    background-color: rgb(122, 38, 7);
-    color: rgb(12, 247, 118);
+.nav-btn-group-items {
+  border: none;
+  padding: 1.5rem 3rem;
+  cursor: pointer;
+  font-size: 17px;
+  margin: 0;
+  background-color: rgb(226, 223, 223);
+  box-shadow: inset 0px 0px 0px -15px rebeccapurple;
+  transition: all 300ms ease-out;
+  text-transform: capitalize;
+}
+.nav-btn-group-items:last-child {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.nav-btn-group-items:first-child {
+  border-bottom-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.nav-btn-group-items:hover,
+.nav-btn-group-items:focus {
+  color: rgb(70, 51, 153);
+  box-shadow: inset 0px -20px 0px -15px rebeccapurple;
+  outline: none;
 }
