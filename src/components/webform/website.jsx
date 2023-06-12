@@ -26,9 +26,9 @@ const Website = () => {
               </span>
               <div className="card-read">Read</div>
             </div>
+            <img src="./images/maggi.jpeg" alt="i" className="card-image" />
+            <span className="card-tag subtle">Order Now</span>
           </div>
-          <img src="./images/maggi.jpeg" alt="i"></img>
-          <span className="card-tag">Order-Now</span>
         </div>
       </section>
     </>
