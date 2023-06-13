@@ -1,5 +1,5 @@
 body {
-  background-color: #faf7f2;
+  background-color: #f9f4f4;
 }
 * {
   margin: 0;
@@ -10,7 +10,7 @@ body {
 /* body-section style */
 .main-card-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px 500px));
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px;
   justify-content: space-around;
 }
@@ -106,6 +106,14 @@ body {
 .card-tag:hover{
   background-color: #aaa;
   color: black;
+}
+@media (max-width: 998px) {
+  .main-card-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(200px, 500px));
+    grid-gap: 50px;
+    justify-content: space-around;
+  }
 }
 /* button style */
 .nav-btn {

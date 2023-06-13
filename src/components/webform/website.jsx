@@ -1,36 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
-
+import Menu from "./websiteApi";
+import MenuCard from "./menubox";
+import Navbar from "./navbar";
 const Website = () => {
+  const [menuData,setMenuData]=useState(Menu);
   return (
     <>
-      <nav className="nav-btn">
-        <div className="nav-btn-group">
-          <button className="nav-btn-group-items">Dinner</button>
-          <button className="nav-btn-group-items">BreakFast</button>
-          <button className="nav-btn-group-items">Evening</button>
-          <button className="nav-btn-group-items">Lunch</button>
-          <button className="nav-btn-group-items">All</button>
-        </div>
-      </nav>
-      <section className="main-card-container">
-        <div className="card-container">
-          <div className="card">
-            <div className="card-body">
-              <span className="card-number card-circle">1</span>
-              <span className="card-title subtle">Breakfast</span>
-              <h2 className="card-name">Maggi</h2>
-              <span className="card-description subtle">
-                Maggi is usally eaten as breakfast in all around the worlds
-                regions.
-              </span>
-              <div className="card-read">Read</div>
-            </div>
-            <img src="./images/maggi.jpeg" alt="i" className="card-image" />
-            <span className="card-tag subtle">Order Now</span>
-          </div>
-        </div>
-      </section>
+      <Navbar />
+      <MenuCard menuData={menuData} />
     </>
   );
 };
