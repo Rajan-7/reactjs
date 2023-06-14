@@ -1,15 +1,20 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ filterItems, menuList }) => {
   return (
     <>
       <nav className="nav-btn">
         <div className="nav-btn-group">
-          <button className="nav-btn-group-items">Dinner</button>
-          <button className="nav-btn-group-items">BreakFast</button>
-          <button className="nav-btn-group-items">Evening</button>
-          <button className="nav-btn-group-items">Lunch</button>
-          <button className="nav-btn-group-items">All</button>
+          {menuList.map((curElm) => {
+            return (
+              <button
+                className="nav-btn-group-items"
+                onClick={() => filterItems(curElm)}
+              >
+               {curElm}
+              </button>
+            );
+          })}
         </div>
       </nav>
     </>

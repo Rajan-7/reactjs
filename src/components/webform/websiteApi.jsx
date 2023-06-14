@@ -56,7 +56,7 @@ const Menu = [
     id: 7,
     image: "images/rajmarice.jpg",
     name: "Rajma Rice",
-    category: "lunch",
+    category: "dinner",
     price: "Rs160",
     description: "Rajma chawal is a simple yet delicious meal. Rajma is rich and iron and protein when it is combined with rice it is a great source of carbohydrates. So it makes a wholesome meal.",
   },
@@ -76,5 +76,13 @@ const Menu = [
     price: "Rs160",
     description: "Sugary or sweet means syrupy, candied, sugar coated, honeyed, sweetened, sugared, maybe saccharine; opposite to bitter, unsweetened or sugarless. Sweet-and-sour, a Chinese specialty and also said of a dish that has a pleasant taste",
   },
+  // {
+  //   id: 9,
+  //   image: "images/sweet.jpg",
+  //   name: "Party",
+  //   category: "Party",
+  //   price: "Rs160",
+  //   description: "Sugary or sweet means syrupy, candied, sugar coated, honeyed, sweetened, sugared, maybe saccharine; opposite to bitter, unsweetened or sugarless. Sweet-and-sour, a Chinese specialty and also said of a dish that has a pleasant taste",
+  // },
 ];
 export default Menu;
