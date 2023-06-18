@@ -12,6 +12,7 @@ const Weather = () => {
             type="search"
             autoFocus
             id="searchid"
+            className="searchTerm"
             placeholder="Search ..."
           />
           <button className="search-button">Search</button>
