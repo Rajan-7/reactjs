@@ -27,11 +27,13 @@ const Weather = () => {
             <span>25.6&deg;</span>
           </div>
           <div className="description">
-            <div className="weather-conditon">SUNNY</div>
+            <div className="w-conditon">SUNNY</div>
             <div className="place">Ktm,Nepal</div>
           </div>
         </div>
         <div className="date-time">{new Date().toLocaleString()}</div>
+
+
         {/* 4 divided section */}
         <div className="extra-temp-info-section">
           <div className="temp-info">
@@ -56,7 +58,7 @@ const Weather = () => {
               </p>
             </div>
           </div>
-          <div className="extra-temp-info">
+          <div className="temp-info">
             <div className="two-sided-info">
               <p>
                 <i className={"wi-rain"}></i>

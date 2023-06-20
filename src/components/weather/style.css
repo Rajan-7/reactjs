@@ -84,18 +84,68 @@ body {
   display: flex;
   align-items: center;
 }
-.temperature{
-  flex:0 0 40%;
-  width:100%;
+.temperature {
+  flex: 0 0 40%;
+  width: 100%;
   font-size: 65px;
   display: flex;
   justify-content: space-around;
   margin-right: 20px;
 }
-.description{
-  flex:0 0 60%;
+.description {
+  flex: 0 0 60%;
   font-size: 25px;
   flex-direction: column;
   width: 100%;
   justify-content: center;
+}
+.w-conditon {
+  text-transform: uppercase;
+  font-size: 35px;
+}
+.place {
+  font-size: 15px;
+}
+.date-time {
+  flex: 0 0 30%;
+  height: 40%;
+  background: #70c1b3;
+  color: white;
+  font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  text-align: center;
+}
+.extra-temp-info-section {
+  flex: 0 100%;
+  padding: 5% 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: #fafafa;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.extra-temp-info-section p {
+  font-size: 15px;
+  font-weight: 600;
+}
+.temp-info,
+.two-sided-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  align-items: center;
+}
+.widget .extra-temp-info-section .extra-info-rightside {
+  text-align: left;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #080705;
+  font-size: 15px;
+}
+.extra-temp-info-section p i {
+  font-family: weathericons;
+  font-size: 30px;
+  color: #70c1b3;
 }
