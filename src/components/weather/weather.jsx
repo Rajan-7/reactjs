@@ -56,7 +56,7 @@ const Weather = () => {
         </div>
       </div>
       {/* weather info of search place */}
-      <Weathercard place={placeInfo} />
+      <Weathercard {...placeInfo} />
     </>
   );
 };

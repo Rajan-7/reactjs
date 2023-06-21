@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
-const Weathercard = ({ place }) => {
+const Weathercard = ({
+  temp,
+  humidity,
+  pressure,
+  weathermood,
+  country,
+  sunset,
+  speed,
+  name,
+}) => {
   const [weatherState, setWeatherState] = useState();
-
-  const {
-    temp,
-    humidity,
-    pressure,
-    weathermood,
-    country,
-    sunset,
-    speed,
-    name,
-  } = place;
 
   //for converting time
   const sec = sunset;
