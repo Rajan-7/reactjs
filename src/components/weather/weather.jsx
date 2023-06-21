@@ -1,9 +1,42 @@
 // https://api.openweathermap.org/data/2.5/weather?q=Kathmandu&appid=981facad27f505f35dd4d846d1f36bea
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Weathercard from "./weathercard";
 import "./style.css";
 
 const Weather = () => {
+  const [searchValue, setSearchValue] = useState("kathmandu");
+  const [placeInfo, setPlaceInfo] = useState({});
+
+  const getWeatherInfo = async () => {
+    try {
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=981facad27f505f35dd4d846d1f36bea`;
+      const res = await fetch(url);
+      const data = await res.json();
+      const { humidity, pressure, temp } = data.main;
+      const { main: weathermood } = data.weather[0];
+      const { country, sunset } = data.sys;
+      const { speed } = data.wind;
+      const { name } = data;
+      const myNewWeatherData = {
+        temp,
+        humidity,
+        pressure,
+        weathermood,
+        country,
+        sunset,
+        speed,
+        name,
+      };
+      setPlaceInfo(myNewWeatherData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getWeatherInfo();
+  });
   return (
     <>
       <div className="search-wrapper">
@@ -14,74 +47,16 @@ const Weather = () => {
             id="searchid"
             className="searchTerm"
             placeholder="Search ..."
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
           />
-          <button className="search-button">Search</button>
+          <button className="search-button" onClick={getWeatherInfo}>
+            Search
+          </button>
         </div>
       </div>
-      <article className="widget">
-        <div className="weather-icon">
-          <i className={"wi-day-sunny"}></i>
-        </div>
-        <div className="weather-info">
-          <div className="temperature">
-            <span>25.6&deg;</span>
-          </div>
-          <div className="description">
-            <div className="w-conditon">SUNNY</div>
-            <div className="place">Ktm,Nepal</div>
-          </div>
-        </div>
-        <div className="date-time">{new Date().toLocaleString()}</div>
-
-
-        {/* 4 divided section */}
-        <div className="extra-temp-info-section">
-          <div className="temp-info">
-            <div className="two-sided-info">
-              <p>
-                <i className={"wi-day-rain"}></i>
-              </p>
-              <p className="extra-info-rightside">
-                19:19pm
-                <br />
-                Rainy
-              </p>
-            </div>
-            <div className="two-sided-info">
-              <p>
-                <i className={"wi-humidity"}></i>
-              </p>
-              <p className="extra-info-rightside">
-                74
-                <br />
-                Humidity
-              </p>
-            </div>
-          </div>
-          <div className="temp-info">
-            <div className="two-sided-info">
-              <p>
-                <i className={"wi-rain"}></i>
-              </p>
-              <p className="extra-info-rightside">
-                1014MM
-                <br />
-                Pressure
-              </p>
-            </div>
-            <div className="two-sided-info">
-              <p>
-                <i className={"wi-strong-wind"}></i>
-              </p>
-              <p className="extra-info-rightside">
-                19:19pm
-                <br />
-                Speed
-              </p>
-            </div>
-          </div>
-        </div>
-      </article>
+      {/* weather info of search place */}
+      <Weathercard place={placeInfo} />
     </>
   );
 };
