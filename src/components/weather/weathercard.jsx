@@ -33,7 +33,13 @@ const Weathercard = ({
           setWeatherState("wi-night-thunderstorm");
           break;
         case "Haze":
-          setWeatherState("wi-day-sunny-overcast");
+          setWeatherState("wi-day-haze");
+          break;
+        case "Windy":
+          setWeatherState("wi-day-windyt");
+          break;
+        case "Clear":
+          setWeatherState("wi-night-clear");
           break;
         default:
           setWeatherState("wi-day-sunny");
@@ -79,7 +85,7 @@ const Weathercard = ({
                 <i className={"wi-humidity"}></i>
               </p>
               <p className="extra-info-rightside">
-                {humidity} RH
+                {humidity}%
                 <br />
                 Humidity
               </p>
@@ -101,7 +107,7 @@ const Weathercard = ({
                 <i className={"wi-strong-wind"}></i>
               </p>
               <p className="extra-info-rightside">
-                {speed} Km/hr
+                {speed} Km/h
                 <br />
                 Speed
               </p>

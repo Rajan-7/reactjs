@@ -139,7 +139,7 @@ body {
 .widget .extra-temp-info-section .extra-info-rightside {
   text-align: left;
   font-weight: 600;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   color: #080705;
   font-size: 15px;
   margin-right: 0px;
