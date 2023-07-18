@@ -1,11 +1,11 @@
 import React from "react";
 
-const MenuCard = ({menu}) => {
+const MenuCard = ({menuData}) => {
   // console.log(menu);
   return (
     <>
       <section className="main-card-container">
-        {menu.map((curElm) => {
+        {menuData.map((curElm) => {
           const {id,name,category,description,image}=curElm;
           return (
             <>

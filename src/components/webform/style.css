@@ -7,7 +7,7 @@ body {
   box-sizing: border-box;
   font-family: "Lato";
 }
-/* body-section style */
+/* body-section style css */
 .main-card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -112,7 +112,7 @@ body {
     justify-content: space-around;
   }
 }
-/* button style */
+/* button style css */
 .nav-btn {
   padding-top: 50px;
   text-align: center;
@@ -127,7 +127,7 @@ body {
   border: none;
   padding: 1.5rem 3rem;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 25px;
   margin: 0;
   background-color: rgb(238, 235, 235);
   box-shadow: inset 0px 0px 0px -15px rgb(86, 22, 149);

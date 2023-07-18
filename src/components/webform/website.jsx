@@ -31,7 +31,7 @@ const Website = () => {
   return (
     <>
       <Navbar filterItems={filterItems} menuList={menuList} />
-      <MenuCard menu={menuData} />
+      <MenuCard menuData={menuData} />
     </>
   );
 };
